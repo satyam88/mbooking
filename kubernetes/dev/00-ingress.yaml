@@ -10,12 +10,13 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
     - host: dev-mbooking.cloudcortex.in
       http:
         paths:
-          - pathType: Prefix
-            path: "/"
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: dev-mbooking-service

@@ -10,8 +10,8 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: mbooking-ms
+    app: mbooking
   ports:
-    - name: api
+    - name: http
       port: 8080
       targetPort: 8080
