@@ -45,4 +45,4 @@ spec:
       volumes:
         - name: application-config
           configMap:
-            name: mbooking
+            name: preprod-mbooking-application-config
