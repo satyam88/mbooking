@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: dev-mbooking-ingress
-  namespace: prod
+  namespace: dev
   labels:
     env: dev
     app: mbooking
@@ -11,7 +11,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: dev.mbooking.connectingclouds.in
+    - host: dev-mbooking.connectingclouds.in
       http:
         paths:
           - pathType: Prefix
