@@ -5,20 +5,20 @@ metadata:
   namespace: preprod
   labels:
     env: preprod
-    app: mbooking
+    app: mbooking-ms
     layer: frontend
 spec:
   replicas: 3
   strategy:
+    type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 25%
       maxSurge: 100%
-    type: RollingUpdate
   selector:
     matchLabels:
-    env: preprod
-    app: mbooking
-    layer: frontend
+      env: preprod
+      app: mbooking
+      layer: frontend
   template:
     metadata:
       labels:
