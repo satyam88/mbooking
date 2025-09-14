@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dev-mbooking-application-config
+  namespace: dev
+  labels:
+    env: dev
+    app: mbooking
+    layer: frontend
+data:
+  application.properties: |-

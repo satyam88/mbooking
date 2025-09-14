@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: prod-mbooking-hpa
+  namespace: prod
+  labels:
+    env: prod
+    app: mbooking
+    layer: frontend
+spec:
+  maxReplicas: 10
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: prod-mbooking-deployment
+  targetCPUUtilizationPercentage: 80

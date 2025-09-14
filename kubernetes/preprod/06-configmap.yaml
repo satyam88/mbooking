@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: preprod-mbooking-application-config
+  namespace: preprod
+  labels:
+    env: preprod
+    app: mbooking
+    layer: frontend
+data:
+  application.properties: |-
