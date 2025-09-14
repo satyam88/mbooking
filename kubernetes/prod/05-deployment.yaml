@@ -5,20 +5,20 @@ metadata:
   namespace: prod
   labels:
     env: prod
-    app: mbooking
+    app: mbooking-ms
     layer: frontend
 spec:
   replicas: 3
   strategy:
+    type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 25%
       maxSurge: 100%
-    type: RollingUpdate
   selector:
     matchLabels:
-    env: prod
-    app: mbooking
-    layer: frontend
+      env: prod
+      app: mbooking
+      layer: frontend
   template:
     metadata:
       labels:
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: mbooking
-          image: 559220132560.dkr.ecr.ap-south-1.amazonaws.com/mbooking:<latest>
+          image: 533267238276.dkr.ecr.ap-south-1.amazonaws.com/mbooking:<latest>
           resources:
             requests:
               memory: 50Mi
@@ -45,4 +45,4 @@ spec:
       volumes:
         - name: application-config
           configMap:
-            name: mbooking
+            name: prod-mbooking-application-config

@@ -11,7 +11,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: prod.mbooking.connectingclouds.in
+    - host: prod-mbooking.connectingclouds.in
       http:
         paths:
           - pathType: Prefix
