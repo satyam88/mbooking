@@ -43,6 +43,6 @@ spec:
             - mountPath: /app/config
               name: application-config
       volumes:
-        - name: application-config
+        - name: dev-mbooking-application-config
           configMap:
             name: mbooking
